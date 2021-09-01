@@ -1,16 +1,10 @@
 class ducktape::openldap::autoload(
-  $load_accesses = true,
-  $load_indexes = true,
-  $load_modules = true,
-  $load_overlays = true,
-  $load_schemas = true,
+  Boolean $load_accesses = true,
+  Boolean $load_indexes = true,
+  Boolean $load_modules = true,
+  Boolean $load_overlays = true,
+  Boolean $load_schemas = true,
 ) {
-
-  validate_bool($load_accesses)
-  validate_bool($load_indexes)
-  validate_bool($load_modules)
-  validate_bool($load_overlays)
-  validate_bool($load_schemas)
 
   if $load_accesses {
     $access_defaults = hiera('ducktape::openldap::server::access_defaults', {})

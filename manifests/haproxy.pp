@@ -1,9 +1,7 @@
 class ducktape::haproxy (
-  $enabled = true,
+  Boolean $enabled = true,
   $package_install_options = undef,
 ) {
-
-  validate_bool($enabled)
 
   if $enabled {
     if ($package_install_options) {
@@ -26,4 +24,3 @@ class ducktape::haproxy (
   }
 
 }
-

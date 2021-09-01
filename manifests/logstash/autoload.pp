@@ -1,12 +1,8 @@
 class ducktape::logstash::autoload (
-  $load_configfiles  = true,
-  $load_patternfiles = true,
-  $load_plugins      = true,
+  Boolean $load_configfiles  = true,
+  Boolean $load_patternfiles = true,
+  Boolean $load_plugins      = true,
 ) {
-
-  validate_bool($load_configfiles)
-  validate_bool($load_patternfiles)
-  validate_bool($load_plugins)
 
   if $load_configfiles {
     $logstash_configfile_defaults = hiera('ducktape::logstash::configfile::defaults', {})
@@ -24,4 +20,3 @@ class ducktape::logstash::autoload (
   }
 
 }
-

@@ -1,10 +1,7 @@
 class ducktape::opendkim::autoload (
-  $load_domains  = true,
-  $load_trusteds = true,
+  Boolean $load_domains  = true,
+  Boolean $load_trusteds = true,
 ) {
-
-  validate_bool($load_domains)
-  validate_bool($load_trusteds)
 
   if $load_domains {
     $domain_defaults = hiera('ducktape::opendkim::domain::defaults', {})
@@ -17,4 +14,3 @@ class ducktape::opendkim::autoload (
   }
 
 }
-

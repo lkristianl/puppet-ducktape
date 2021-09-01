@@ -1,8 +1,6 @@
 class ducktape::rabbitmq (
-  $enabled = true,
+  Boolean $enabled = true,
 ) {
-
-  validate_bool($enabled)
 
   if $enabled {
     include ducktape::rabbitmq::autoload
@@ -17,4 +15,3 @@ class ducktape::rabbitmq (
   }
 
 }
-

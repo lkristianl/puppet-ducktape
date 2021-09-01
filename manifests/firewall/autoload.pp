@@ -1,10 +1,7 @@
 class ducktape::firewall::autoload (
-  $load_rules = true,
-  $load_chains = true,
+  Boolean $load_rules = true,
+  Boolean $load_chains = true,
 ) {
-
-  validate_bool($load_rules)
-  validate_bool($load_chains)
 
   if $load_rules {
     $rule_defaults = lookup('ducktape::firewall::rule::defaults', {'default_value' => {}})
@@ -29,4 +26,3 @@ class ducktape::firewall::autoload (
   }
 
 }
-

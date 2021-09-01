@@ -1,8 +1,6 @@
 class ducktape::apache (
-  $enabled = true,
+  Boolean $enabled = true,
 ) {
-
-  validate_bool($enabled)
 
   if $enabled {
     # Declare configuration snippets.

@@ -1,9 +1,7 @@
 class ducktape::opendkim (
-  $enabled = true,
+  Boolean $enabled = true,
   $port    = 8891,
 ) {
-
-  validate_bool($enabled)
 
   if $enabled {
     include ::ducktape::opendkim::autoload
@@ -18,4 +16,3 @@ class ducktape::opendkim (
   }
 
 }
-

@@ -1,13 +1,11 @@
 class ducktape::rabbitmq::autoload (
-  $load_vhosts           = true,
-  $load_exchanges        = true,
+  Boolean $load_vhosts           = true,
+  Boolean $load_exchanges        = true,
+  #TODO# Add Boolean?
   $load_queues           = true,
   $load_users            = true,
   $load_user_permissions = true,
 ) {
-
-  validate_bool($load_vhosts)
-  validate_bool($load_exchanges)
 
   if $load_vhosts {
     $rabbitmq_vhost_defaults = hiera('ducktape::rabbitmq::vhost::defaults', {})
@@ -35,4 +33,3 @@ class ducktape::rabbitmq::autoload (
   }
 
 }
-

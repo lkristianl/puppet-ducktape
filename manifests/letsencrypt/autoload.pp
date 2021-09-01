@@ -1,9 +1,7 @@
 class ducktape::letsencrypt::autoload (
-  $load_certonlys = true,
-  $load_backends  = true,
+  Boolean $load_certonlys = true,
+  $load_backends  = true, ##TODO## add Boolean?
 ) {
-
-  validate_bool($load_certonlys)
 
   if $load_certonlys {
     #TODO# ensure that each key matchs its first domain
@@ -13,4 +11,3 @@ class ducktape::letsencrypt::autoload (
   }
 
 }
-

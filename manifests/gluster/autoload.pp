@@ -1,8 +1,6 @@
 class ducktape::gluster::autoload (
-  $load_mounts = true,
+  Boolean $load_mounts = true,
 ) {
-
-  validate_bool($load_mounts)
 
   if $load_mounts {
     $gluster_mount_defaults = hiera('ducktape::gluster::mount::defaults', {})
@@ -10,4 +8,3 @@ class ducktape::gluster::autoload (
   }
 
 }
-

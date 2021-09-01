@@ -1,9 +1,7 @@
 class ducktape::mysql::external::monit(
-  $enabled = true,
+  Boolean $enabled = true,
   $action  = 'restart',
 ) {
-
-  validate_bool($enabled)
 
   if $enabled {
     $init_system = $::operatingsystem ? {
@@ -40,4 +38,3 @@ class ducktape::mysql::external::monit(
   }
 
 }
-

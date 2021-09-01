@@ -1,5 +1,5 @@
 class ducktape::apache::external::monit(
-  $enabled        = true,
+  Boolean $enabled = true,
   $action         = 'restart',
   $ip             = '127.0.0.1',
   $port           = 80,
@@ -12,7 +12,6 @@ class ducktape::apache::external::monit(
   $extra_tests    = [],
 ) {
 
-  validate_bool($enabled)
   #TODO# Add more validations
 
   if $enabled {

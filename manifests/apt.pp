@@ -1,8 +1,6 @@
 class ducktape::apt (
-  $enabled = true,
+  Boolean $enabled = true,
 ) {
-
-  validate_bool($enabled)
 
   if $enabled {
     # Declare keys.
@@ -17,4 +15,3 @@ class ducktape::apt (
   }
 
 }
-

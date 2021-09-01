@@ -1,9 +1,8 @@
 class ducktape::mysql::flavour (
   $flavour,
-  $enabled = true,
+  Boolean $enabled = true,
 ) {
 
-  validate_bool($enabled)
   validate_string($flavour)
 
   if $enabled {

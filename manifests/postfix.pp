@@ -1,17 +1,14 @@
 class ducktape::postfix(
-  $enabled = true,
+  Boolean $enabled = true,
 ) {
-
-  validate_bool($enabled)
 
   if $enabled {
     include ducktape::postfix::autoload
 
-    # External checks. 
+    # External checks.
     if defined('::monit') and defined(Class['::monit']) {
       include ::ducktape::postfix::external::monit
     }
   }
 
 }
-

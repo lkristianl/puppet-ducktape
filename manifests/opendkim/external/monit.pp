@@ -1,10 +1,8 @@
 class ducktape::opendkim::external::monit(
-  $enabled = true,
+  Boolean $enabled = true,
   $action  = 'restart',
   $port    = $::ducktape::opendkim::port,
 ) {
-
-  validate_bool($enabled)
 
   if $enabled {
     $init_system = $::operatingsystem ? {
@@ -31,4 +29,3 @@ class ducktape::opendkim::external::monit(
   }
 
 }
-

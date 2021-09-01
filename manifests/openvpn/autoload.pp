@@ -1,12 +1,8 @@
 class ducktape::openvpn::autoload (
-  $load_servers = true,
-  $load_clients = true,
-  $load_revokes = true,
+  Boolean $load_servers = true,
+  Boolean $load_clients = true,
+  Boolean $load_revokes = true,
 ) {
-
-  validate_bool($load_servers)
-  validate_bool($load_clients)
-  validate_bool($load_revokes)
 
   if $load_servers {
     $server_defaults = hiera('ducktape::openvpn::server::defaults', {})
@@ -24,4 +20,3 @@ class ducktape::openvpn::autoload (
   }
 
 }
-

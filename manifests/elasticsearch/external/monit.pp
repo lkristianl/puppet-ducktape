@@ -1,10 +1,8 @@
 class ducktape::elasticsearch::external::monit(
-  $enabled      = true,
+  Boolean $enabled = true,
   $systemd_file = '/lib/systemd/system/elasticsearch-es01.service',
   $tests        = [],
 ) {
-
-  validate_bool($enabled)
 
   if $enabled {
 
@@ -18,4 +16,3 @@ class ducktape::elasticsearch::external::monit(
   }
 
 }
-

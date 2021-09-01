@@ -1,10 +1,8 @@
 class ducktape::munin::node (
-  $enabled = true,
-  $manage_repo = true,
+  Boolean $enabled = true,
+  $manage_repo = true, ##TODO## Add Boolean?
   $contrib_plugins_path = '/opt/munin-monitoring',
 ) {
-
-  validate_bool($enabled)
 
   if $enabled {
     if $manage_repo {
@@ -23,4 +21,3 @@ class ducktape::munin::node (
   }
 
 }
-

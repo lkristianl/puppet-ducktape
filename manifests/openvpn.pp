@@ -1,8 +1,6 @@
 class ducktape::openvpn (
-  $enabled  = true,
+  Boolean $enabled  = true,
 ) {
-
-  validate_bool($enabled)
 
   if $enabled {
     include ::ducktape::openvpn::autoload
@@ -14,4 +12,3 @@ class ducktape::openvpn (
   }
 
 }
-

@@ -1,8 +1,6 @@
 class ducktape::logrotate::autoload (
-  $load_rules = true,
+  Boolean $load_rules = true,
 ) {
-
-  validate_bool($load_rules)
 
   if $load_rules {
     $logrotate_rule_defaults = hiera('ducktape::logrotate::rule::defaults', {})
@@ -10,4 +8,3 @@ class ducktape::logrotate::autoload (
   }
 
 }
-

@@ -1,8 +1,6 @@
 class ducktape::gluster (
-  $enabled = true,
+  Boolean $enabled = true,
 ) {
-
-  validate_bool($enabled)
 
   if $enabled {
     include ducktape::gluster::autoload
@@ -19,4 +17,3 @@ class ducktape::gluster (
   }
 
 }
-

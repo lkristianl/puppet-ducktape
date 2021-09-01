@@ -12,8 +12,6 @@ class ducktape::systemd (
     ]] $logging_level,
 ) {
 
-  validate_bool($enabled)
-
   if $enabled {
     include ducktape::systemd::autoload
 

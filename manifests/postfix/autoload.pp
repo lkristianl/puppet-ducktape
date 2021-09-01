@@ -1,8 +1,6 @@
 class ducktape::postfix::autoload (
-  $load_configs = true,
+  Boolean $load_configs = true,
 ) {
-
-  validate_bool($load_configs)
 
   if $load_configs {
     $postfix_config_defaults = hiera('ducktape::postfix::config::defaults', {})
@@ -10,4 +8,3 @@ class ducktape::postfix::autoload (
   }
 
 }
-
