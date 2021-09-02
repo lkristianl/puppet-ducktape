@@ -34,4 +34,3 @@ class ducktape::haproxy::autoload (
     create_resources('haproxy::userlist', $userlists, $userlist_defaults)
   }
 }
-
