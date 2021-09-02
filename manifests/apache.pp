@@ -1,12 +1,11 @@
 class ducktape::apache (
   Boolean $enabled = true,
+  Hash $defaults = {},
+  Hash $confs = {},
 ) {
 
   if $enabled {
-    # Declare configuration snippets.
-    $defaults = hiera('ducktape::apache::conf::defaults', {})
-    $confs    = hiera_hash('ducktape::apache::confs', {})
-    create_resources('::ducktape::apache::conf', $confs, $defaults)
+    require ::ducktape::apache::autoload
 
     # External checks.
     if defined('::monit') and defined(Class['::monit']) {
