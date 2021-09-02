@@ -1,14 +1,13 @@
 define ducktape::php::conf(
   $ensure   = present,
   $priority = '99',
-  $config   = {},
+  Hash $config   = {},
 ) {
 #TODO# Add $sapi = [] param. If not empty, limit this config to the given SAPI list.
 
   validate_re($ensure, '^(present|absent)$',
   "${ensure} is not supported for ensure.
   Allowed values are 'present' and 'absent'.")
-  validate_hash($config)
 
   $php_config_file = "${::php::config_root_ini}/${name}.ini"
 
@@ -50,4 +49,3 @@ define ducktape::php::conf(
     Php::Config[$name] ~> Exec[$cmd]
   }
 }
-

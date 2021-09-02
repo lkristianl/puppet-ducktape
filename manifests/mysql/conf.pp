@@ -2,14 +2,13 @@ define ducktape::mysql::conf(
   $ensure     = present,
   $priority   = '010',
   $section    = 'mysqld',
-  $directives = {},
+  Hash $directives = {},
   $content    = undef,
 ) {
 
   validate_re($ensure, '^(present|absent)$',
   "${ensure} is not supported for ensure.
   Allowed values are 'present' and 'absent'.")
-  validate_hash($directives)
 
   $file = "${::mysql::server::includedir}/${priority}-${name}.cnf"
 
@@ -32,4 +31,3 @@ define ducktape::mysql::conf(
     notify  => Class['::mysql::server::service'],
   }
 }
-

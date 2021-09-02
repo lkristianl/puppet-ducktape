@@ -1,12 +1,10 @@
 class ducktape::varnish::vcl (
   Boolean $enabled    = true,
-  $vcl_name   = puppet,
-  $vcl_source = undef,
+  String $vcl_name   = puppet,
+  $vcl_source = undef, ##TODO## is it a string?
 ) {
 
 #TODO# try to move this to upstream module
-
-  validate_string($vcl_name)
 
   if $enabled {
     if $vcl_source != undef {
