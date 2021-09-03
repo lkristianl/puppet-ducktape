@@ -1,5 +1,11 @@
 class ducktape::openvpn (
   Boolean $enabled  = true,
+  Hash $server_defaults = {},
+  Hash $servers = {},
+  Hash $client_defaults = {},
+  Hash $clients = {},
+  Hash $revoke_defaults = {},
+  Hash $revokes = {},
 ) {
 
   if $enabled {
