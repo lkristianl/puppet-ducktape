@@ -9,6 +9,18 @@ lookup_options:
     merge:
       strategy: deep
       knockout_prefix: --
+  ducktape::haproxy::autoload::frontends:
+    merge:
+      strategy: deep
+      knockout_prefix: --
+  ducktape::haproxy::autoload::backends:
+    merge:
+      strategy: deep
+      knockout_prefix: --
+  ducktape::haproxy::autoload::userlists:
+    merge:
+      strategy: deep
+      knockout_prefix: --
 
 ducktape::firewall::rules::defaults: {}
 ducktape::firewall::rules: {}
