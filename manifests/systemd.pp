@@ -10,6 +10,14 @@ class ducktape::systemd (
     'info',
     'debug'
     ]] $logging_level,
+  Hash $dropin_files_defaults = {},
+  Hash $dropin_files = {},
+  Hash $unit_files_defaults = {},
+  Hash $unit_files = {},
+  Hash $timers_defaults = {},
+  Hash $timers = {},
+  Hash $networks_defaults = {},
+  Hash $networks = {},
 ) {
 
   if $enabled {
