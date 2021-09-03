@@ -1,5 +1,11 @@
 class ducktape::logstash (
   Boolean $enabled = true,
+  Hash $configfile_defaults = {},
+  Hash $configfiles = {},
+  Hash $patternfile_defaults = {}
+  Hash $patternfiles = {},
+  Hash $plugin_defaults = {},
+  Hash $plugins = {},
 ) {
 
   if $enabled {
