@@ -1,6 +1,10 @@
 class ducktape::opendkim (
   Boolean $enabled = true,
-  $port    = 8891,
+  Integer $port    = 8891,
+  Hash $domain_defaults = {},
+  Hash $domains = {},
+  Hash $trusted_defaults = {},
+  Hash $trusteds = {},
 ) {
 
   if $enabled {
