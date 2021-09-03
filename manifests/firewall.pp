@@ -1,12 +1,8 @@
 class ducktape::firewall (
-  $enabled = true,
-  $purge_firewall = false,
-  $purge_firewallchain = false,
+  Boolean $enabled = true,
+  Boolean $purge_firewall = false,
+  Boolean $purge_firewallchain = false,
 ) {
-
-  validate_bool($enabled)
-  validate_bool($purge_firewall)
-  validate_bool($purge_firewallchain)
 
   if $enabled {
     resources { 'firewall':
@@ -21,4 +17,3 @@ class ducktape::firewall (
   }
 
 }
-

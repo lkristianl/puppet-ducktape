@@ -1,5 +1,5 @@
 class ducktape::mysql::external::munin_node_plugin(
-  $enabled            = true,
+  Boolean $enabled    = true,
   $ensure             = present,
   $old_plugin         = false,
   # No mysql_innodb and no mysql_isam_space_
@@ -49,7 +49,6 @@ class ducktape::mysql::external::munin_node_plugin(
   $kjellm_repo_dst    = '/opt/kjellm-munin-mysql'
 ) {
 
-  validate_bool($enabled)
   #TODO# Add more validations
 
   if $enabled and defined('::munin::node') and defined(Class['::munin::node']) {

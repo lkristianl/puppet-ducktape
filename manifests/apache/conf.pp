@@ -1,14 +1,13 @@
 define ducktape::apache::conf(
-  $ensure     = present,
-  $priority   = '010',
-  $directives = [],
-  $content    = undef,
+  Enum['present', 'absent'] $ensure = present,
+  String $priority   = '010',
+  Array[String] $directives = [],
+  $content    = undef, ##TODO## Is it a string?
 ) {
 
   validate_re($ensure, '^(present|absent)$',
   "${ensure} is not supported for ensure.
   Allowed values are 'present' and 'absent'.")
-  validate_array($directives)
 
   $file = "${::apache::confd_dir}/${priority}-${name}.conf"
 

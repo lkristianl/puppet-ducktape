@@ -1,8 +1,6 @@
-class ducktape::openldap::external::monit(
-  $enabled = true,
+class ducktape::openldap::server::external::monit(
+  Boolean $enabled = true,
 ) {
-
-  validate_bool($enabled)
 
   if $enabled {
     #TODO# Add support for RedHat family.
@@ -24,4 +22,3 @@ class ducktape::openldap::external::monit(
   }
 
 }
-

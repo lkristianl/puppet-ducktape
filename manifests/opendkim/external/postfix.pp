@@ -1,9 +1,7 @@
 class ducktape::opendkim::external::postfix(
-  $enabled = true,
+  Boolean $enabled = true,
   $port    = $::ducktape::opendkim::port,
 ) {
-
-  validate_bool($enabled)
 
   if $enabled {
     $socket_postfix_def = "inet:127.0.0.1:${port}"
@@ -15,4 +13,3 @@ class ducktape::opendkim::external::postfix(
   }
 
 }
-

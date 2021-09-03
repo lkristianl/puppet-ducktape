@@ -1,9 +1,14 @@
 class ducktape::haproxy (
-  $enabled = true,
+  Boolean $enabled = true,
   $package_install_options = undef,
+  Hash    $frontend_defaults  = {},
+  Hash    $frontends          = {},
+  Hash    $backend_defaults   = {},
+  Hash    $backends           = {},
+  Hash    $peers              = {},
+  Hash    $userlist_defaults  = {},
+  Hash    $userlists          = {},
 ) {
-
-  validate_bool($enabled)
 
   if $enabled {
     if ($package_install_options) {
@@ -26,4 +31,3 @@ class ducktape::haproxy (
   }
 
 }
-

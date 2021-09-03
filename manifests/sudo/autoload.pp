@@ -1,9 +1,7 @@
 class ducktape::sudo::autoload (
-  $autoload             = true,
+  Boolean $autoload             = true,
   $hiera_merge_strategy = hiera_hash,
 ) {
-
-  validate_bool($autoload)
 
   if $autoload {
     $conf_defaults = hiera('ducktape::sudo::conf::defaults', {})
@@ -17,4 +15,3 @@ class ducktape::sudo::autoload (
   }
 
 }
-

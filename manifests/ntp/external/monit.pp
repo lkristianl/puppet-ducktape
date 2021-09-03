@@ -1,9 +1,7 @@
 class ducktape::ntp::external::monit(
-  $enabled = true,
+  Boolean $enabled = true,
   $action  = 'restart',
 ) {
-
-  validate_bool($enabled)
 
   if $enabled {
     $pidfile = $::osfamily ? {
@@ -52,4 +50,3 @@ class ducktape::ntp::external::monit(
   }
 
 }
-
