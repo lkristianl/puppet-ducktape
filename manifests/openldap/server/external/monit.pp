@@ -1,4 +1,4 @@
-class ducktape::openldap::external::monit(
+class ducktape::openldap::server::external::monit(
   Boolean $enabled = true,
 ) {
 
