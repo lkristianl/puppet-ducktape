@@ -21,6 +21,18 @@ lookup_options:
     merge:
       strategy: deep
       knockout_prefix: --
+  ducktape::jenkins::autoload::cli_execs:
+    merge:
+      strategy: deep
+  ducktape::jenkins::autoload::credentials:
+    merge:
+      strategy: deep
+  ducktape::jenkins::autoload::native_credentials:
+    merge:
+      strategy: deep
+  ducktape::jenkins::autoload::users:
+    merge:
+      strategy: deep
 
 ducktape::firewall::rules::defaults: {}
 ducktape::firewall::rules: {}
